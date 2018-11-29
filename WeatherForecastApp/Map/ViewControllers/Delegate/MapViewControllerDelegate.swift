@@ -12,11 +12,29 @@ import MapKit
 extension MapViewController: MKMapViewDelegate {
 
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        return MKAnnotationView()
+        guard !(annotation is MKUserLocation) else { return nil }
+        let reuseId = "Identifier"
+        var View = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
+        if View == nil {
+            View = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+        }
+        View?.pinTintColor = UIColor.blue
+        View?.canShowCallout = true
+        let smallSquare = CGSize(width: 30, height: 30)
+        let button = UIButton(frame: CGRect(origin: .zero, size: smallSquare))
+        button.setImage(#imageLiteral(resourceName: "bookmark"), for: .normal)
+        button.setImage(#imageLiteral(resourceName: "bookmark-selected"), for: .highlighted)
+        button.setImage(#imageLiteral(resourceName: "bookmark-selected"), for: .selected)
+        View?.leftCalloutAccessoryView = button
+        return View
     }
 
-    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        print("Up and running!")
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if let annotation = view.annotation {
+            let point = MKPointAnnotation.init()
+            point.coordinate = annotation.coordinate
+            bookmark(annotation: point)
+        }
     }
 }
 
@@ -30,20 +48,32 @@ extension MapViewController: MapSearch {
             let annotation = MKPointAnnotation()
             annotation.coordinate = placemark.coordinate
             annotation.title = placemark.name
-            if let city = placemark.locality,
-                let state = placemark.administrativeArea {
-                annotation.subtitle = "\(city) \(state)"
+            if let city = placemark.locality {
+                annotation.subtitle = "Tap the bookmark icon to add \(city) to your bookmarks for weather forecast!"
             }
             mapView.addAnnotation(annotation)
             let span = MKCoordinateSpanMake(0.05, 0.05)
             let region = MKCoordinateRegionMake(placemark.coordinate, span)
             mapView.setRegion(region, animated: true)
+            mapView.showAnnotations(mapView.annotations, animated: true)
         }
 }
 extension MapViewController : CLLocationManagerDelegate {
     
-    @objc func bookmark () {
-        
+    func bookmark (annotation: MKPointAnnotation) {
+        let userDefaults = UserDefaults.standard
+        if let decoded = userDefaults.object(forKey: "cities") as? Data,
+            var decodedList = NSKeyedUnarchiver.unarchiveObject(with: decoded) as? [Place] {
+            decodedList.append(Place(annotation: annotation))
+            userDefaults.removeObject(forKey: "cities")
+            let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: decodedList)
+            userDefaults.set(encodedData, forKey: "cities")
+            userDefaults.synchronize()
+        } else {
+            let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: [Place(annotation: annotation)])
+            userDefaults.set(encodedData, forKey: "cities")
+            userDefaults.synchronize()
+        }
     }
 
     private func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
@@ -62,24 +92,4 @@ extension MapViewController : CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("error:: \(error)")
     }
-    
-    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView?{
-        
-        guard !(annotation is MKUserLocation) else { return nil }
-        let reuseId = "Identifier"
-        var View = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
-        if View == nil {
-            View = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-        }
-        View?.pinTintColor = UIColor.blue
-        View?.canShowCallout = true
-        let smallSquare = CGSize(width: 30, height: 30)
-        let button = UIButton(frame: CGRect(origin: .zero, size: smallSquare))
-        button.setBackgroundImage(#imageLiteral(resourceName: "bookmark"), for: .normal)
-        button.setBackgroundImage(#imageLiteral(resourceName: "bookmark-selected"), for: UIControlState.selected)
-        button.addTarget(self, action: #selector(bookmark), for: .touchUpInside)
-        View?.leftCalloutAccessoryView = button
-        return View
-    }
-    
 }

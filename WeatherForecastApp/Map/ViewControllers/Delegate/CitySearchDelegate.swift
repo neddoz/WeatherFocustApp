@@ -16,7 +16,7 @@ extension CitySearchTableView: UISearchResultsUpdating {
         
         let request = MKLocalSearchRequest()
         request.naturalLanguageQuery = searchBarText
-        request.region = mapView.region
+//        request.region = mapView.region
         let search = MKLocalSearch(request: request)
         
         search.start { response, _ in

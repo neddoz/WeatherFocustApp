@@ -15,6 +15,8 @@
 		ADCB564D21B0180A00110CAC /* MKPlaceMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCB564C21B0180A00110CAC /* MKPlaceMark.swift */; };
 		ADCB564F21B018C200110CAC /* CitySearchDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCB564E21B018C200110CAC /* CitySearchDelegate.swift */; };
 		ADCB565121B01C2100110CAC /* NibLoableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCB565021B01C2100110CAC /* NibLoableView.swift */; };
+		ADCB565321B0252F00110CAC /* MKPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCB565221B0252F00110CAC /* MKPointAnnotation.swift */; };
+		ADCB565521B0281400110CAC /* StorablePlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCB565421B0281400110CAC /* StorablePlace.swift */; };
 		ADF207F421AFEAD4009A8E54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF207F321AFEAD4009A8E54 /* AppDelegate.swift */; };
 		ADF207F921AFEAD5009A8E54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADF207F721AFEAD5009A8E54 /* Main.storyboard */; };
 		ADF207FB21AFEAD7009A8E54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADF207FA21AFEAD7009A8E54 /* Assets.xcassets */; };
@@ -46,6 +48,8 @@
 		ADCB564C21B0180A00110CAC /* MKPlaceMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKPlaceMark.swift; sourceTree = "<group>"; };
 		ADCB564E21B018C200110CAC /* CitySearchDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySearchDelegate.swift; sourceTree = "<group>"; };
 		ADCB565021B01C2100110CAC /* NibLoableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoableView.swift; sourceTree = "<group>"; };
+		ADCB565221B0252F00110CAC /* MKPointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKPointAnnotation.swift; sourceTree = "<group>"; };
+		ADCB565421B0281400110CAC /* StorablePlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorablePlace.swift; sourceTree = "<group>"; };
 		ADF207F021AFEAD4009A8E54 /* WeatherForecastApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherForecastApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADF207F321AFEAD4009A8E54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADF207F821AFEAD5009A8E54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -184,6 +188,7 @@
 			children = (
 				ADF2081921AFECFF009A8E54 /* URLRequest.swift */,
 				ADCB564C21B0180A00110CAC /* MKPlaceMark.swift */,
+				ADCB565221B0252F00110CAC /* MKPointAnnotation.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -200,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				ADF2081F21AFF03E009A8E54 /* WeatherItem.swift */,
+				ADCB565421B0281400110CAC /* StorablePlace.swift */,
 			);
 			path = ModelObjects;
 			sourceTree = "<group>";
@@ -318,7 +324,9 @@
 				ADF2082021AFF03E009A8E54 /* WeatherItem.swift in Sources */,
 				ADF2081A21AFECFF009A8E54 /* URLRequest.swift in Sources */,
 				AD1FC51621B0099600B874E0 /* MapViewController.swift in Sources */,
+				ADCB565321B0252F00110CAC /* MKPointAnnotation.swift in Sources */,
 				ADCB564F21B018C200110CAC /* CitySearchDelegate.swift in Sources */,
+				ADCB565521B0281400110CAC /* StorablePlace.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
