@@ -61,19 +61,11 @@ extension MapViewController: MapSearch {
 extension MapViewController : CLLocationManagerDelegate {
     
     func bookmark (annotation: MKPointAnnotation) {
-        let userDefaults = UserDefaults.standard
-        if let decoded = userDefaults.object(forKey: "cities") as? Data,
-            var decodedList = NSKeyedUnarchiver.unarchiveObject(with: decoded) as? [Place] {
-            decodedList.append(Place(annotation: annotation))
-            userDefaults.removeObject(forKey: "cities")
-            let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: decodedList)
-            userDefaults.set(encodedData, forKey: "cities")
-            userDefaults.synchronize()
-        } else {
-            let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: [Place(annotation: annotation)])
-            userDefaults.set(encodedData, forKey: "cities")
-            userDefaults.synchronize()
-        }
+        let place = Place.init(annotation: annotation)
+        let addViewModel = AddBookMarkViewModel.init(place: place)
+        let vc = AddBookMarkViewController.instantiate(from: AppStoryBoards.AddBookMark)
+        vc.viewModel = addViewModel
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
     private func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {

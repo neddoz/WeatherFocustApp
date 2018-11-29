@@ -23,18 +23,24 @@ class MapViewController: UIViewController {
         mapView.delegate = self
         configureSearchBar()
         configureLocationManager()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Your Bookmarks", style: .plain, target: self, action: #selector(showBookMarks))
     }
 
     private func configureMap() {
         mapView.showsPointsOfInterest = true
     }
+
+    @objc private func showBookMarks() {
     
+    }
+
     private func configureLocationManager() {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
     }
+    
     
     private func configureSearchBar() {
         let locationSearchTable = CitySearchTableView(with: .plain)

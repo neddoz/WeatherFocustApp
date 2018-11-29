@@ -11,20 +11,21 @@ import MapKit
 
 extension CitySearchTableView: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        guard let mapView = self.mapView,
+        guard let _ = self.mapView,
             let searchBarText = searchController.searchBar.text else { return }
         
         let request = MKLocalSearchRequest()
         request.naturalLanguageQuery = searchBarText
-//        request.region = mapView.region
         let search = MKLocalSearch(request: request)
         
-        search.start { response, _ in
+        search.start { [weak self] response, _ in
             guard let response = response else {
                 return
             }
-            self.matchingItems = response.mapItems
-            self.tableView.reloadData()
+            self?.matchingItems = response.mapItems
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
         }
     }
 }
