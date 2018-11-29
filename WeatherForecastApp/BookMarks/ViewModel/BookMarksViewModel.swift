@@ -35,7 +35,6 @@ extension BookMarksViewModel {
 
     func place(for row: Int)-> Place? {
         guard places.count >= 1 else {return nil}
-        print(places[row].additionalInfo)
         return places[row]
     }
 }

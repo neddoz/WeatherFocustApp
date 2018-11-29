@@ -15,16 +15,25 @@ struct WeatherItem {
         static let city = "city"
         static let country = "country"
         static let cod = "cod"
+        static let weather = "Weather"
         static let message = "message"
         static let list = "list"
+        static let base = "base"
+        static let main = "main"
+        static let name = "name"
+        static let visibility = "visibility"
     }
 
     var coordinate: WeatherItemCooordinate
     var city: City
     var country: String
     var cod: String
+    var weather: [Weather]
     var message: NSNumber
-    var list: [WeatherListItem]
+    var base: String
+    var main: Main
+    var name: String
+    var visibility: NSNumber
     
     init(json: JSON) {
         
@@ -33,8 +42,12 @@ struct WeatherItem {
         self.country = json[Key.country] as? String ?? ""
         self.cod = json[Key.cod] as? String ?? ""
         self.message = json[Key.message] as? NSNumber ?? 0
-        let jsonList = json[Key.list] as? [JSON] ?? []
-        self.list = jsonList.map{return WeatherListItem(json: $0)}
+        let jsonList = json[Key.weather] as? [JSON] ?? []
+        self.weather = jsonList.map{return Weather(json: $0)}
+        self.base = json[Key.cod] as? String ?? ""
+        self.main = Main.init(json: json[Key.main] as? JSON ?? [:])
+        self.name = json[Key.name] as? String ?? ""
+        self.visibility = json[Key.visibility] as? NSNumber ?? 0
     }
 }
 

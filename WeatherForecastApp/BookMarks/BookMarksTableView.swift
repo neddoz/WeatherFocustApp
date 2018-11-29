@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BookMarksTableView: UIViewController{
+class BookMarksTableView: UIViewController {
 
     var viewModel: BookMarksViewModel = .init()
     @IBOutlet var tableView: UITableView!

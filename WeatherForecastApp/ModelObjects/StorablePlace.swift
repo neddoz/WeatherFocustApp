@@ -44,3 +44,15 @@ class Place: NSObject, NSCoding  {
         aCoder.encode(additionalInfo, forKey: "info")
     }
 }
+extension Place {
+    
+    static func weather(for location: CLLocation)-> Resource<WeatherItem>? {
+        guard let url = URL(string: ApiResource.weather(location: location).endpoint) else {return nil}
+        return Resource.init(url: url, method: .get, parseJSON: {  result in
+            guard let unWrappedJson = result as? JSON else {
+                return nil
+            }
+            return WeatherItem(json: unWrappedJson)
+        })
+    }
+}

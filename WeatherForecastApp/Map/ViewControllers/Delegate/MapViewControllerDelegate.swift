@@ -52,9 +52,6 @@ extension MapViewController: MapSearch {
                 annotation.subtitle = "Tap the bookmark icon to add \(city) to your bookmarks for weather forecast!"
             }
             mapView.addAnnotation(annotation)
-            let span = MKCoordinateSpanMake(0.05, 0.05)
-            let region = MKCoordinateRegionMake(placemark.coordinate, span)
-//            mapView.setRegion(region, animated: true)
             mapView.showAnnotations(mapView.annotations, animated: true)
         }
 }
