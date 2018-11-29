@@ -11,6 +11,7 @@ import Foundation
 class BookMarksViewModel {
     
     var places: [Place]
+    var searchText: String = ""
     
     init() {
         let userDefaults = UserDefaults.standard
@@ -30,11 +31,22 @@ extension BookMarksViewModel {
     }
 
     func numberOfRows()-> Int {
+        let places = self.placesRetrieved(for: self.searchText)
         return places.count
     }
 
     func place(for row: Int)-> Place? {
-        guard places.count >= 1 else {return nil}
+        guard self.places.count >= 1 else {return nil}
+        let places = self.placesRetrieved(for: self.searchText)
         return places[row]
+    }
+    
+    private func placesRetrieved(for search: String)-> [Place] {
+        if !search.isEmpty {
+            let filteredPlaces = places.filter{return $0.additionalInfo.contains(searchText)}
+            return filteredPlaces
+        } else {
+            return places
+        }
     }
 }

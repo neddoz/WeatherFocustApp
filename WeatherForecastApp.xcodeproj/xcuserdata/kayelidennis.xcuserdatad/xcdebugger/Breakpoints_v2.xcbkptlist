@@ -9,22 +9,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WeatherForecastApp/BookMarks/Add/ViewModel/AddBookMarkViewModel.swift"
-            timestampString = "565220547.117908"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "commit()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "WeatherForecastApp/BookMarks/Delegate/BoosMarksTableViewDelegate.swift"
             timestampString = "565220547.1181999"
             startingColumnNumber = "9223372036854775807"
@@ -58,7 +42,7 @@
                   moduleName = "WeatherForecastApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kayelidennis/Desktop/WeatherForecastApp/WeatherForecastApp/BookMarks/Delegate/BoosMarksTableViewDelegate.swift"
-                  timestampString = "565220194.469833"
+                  timestampString = "565224682.900012"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "27"
@@ -73,7 +57,7 @@
                   moduleName = "WeatherForecastApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kayelidennis/Desktop/WeatherForecastApp/WeatherForecastApp/BookMarks/Delegate/BoosMarksTableViewDelegate.swift"
-                  timestampString = "565220194.472136"
+                  timestampString = "565224682.9026051"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "23"
@@ -106,7 +90,7 @@
                   moduleName = "WeatherForecastApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kayelidennis/Desktop/WeatherForecastApp/WeatherForecastApp/BookMarks/Delegate/BoosMarksTableViewDelegate.swift"
-                  timestampString = "565220194.477937"
+                  timestampString = "565224682.907218"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "23"
@@ -121,7 +105,7 @@
                   moduleName = "WeatherForecastApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kayelidennis/Desktop/WeatherForecastApp/WeatherForecastApp/BookMarks/Delegate/BoosMarksTableViewDelegate.swift"
-                  timestampString = "565220194.481115"
+                  timestampString = "565224682.910627"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "23"
