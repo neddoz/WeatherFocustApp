@@ -18,7 +18,7 @@ struct WeatherItem {
         static let message = "message"
         static let list = "list"
     }
-    
+
     var coordinate: WeatherItemCooordinate
     var city: City
     var country: String
@@ -205,7 +205,7 @@ extension WeatherItem {
 extension WeatherItem {
     
     struct Weather {
-
+        
         struct Key {
             static let id = "id"
             static let main = "main"
@@ -213,19 +213,19 @@ extension WeatherItem {
             static let description = "description"
             static let icon = "icon"
         }
-
+        
         var id: NSNumber
         var main: String
         var clouds: String
         var description: String
         var icon: String
-
+        
         init(json: JSON) {
             self.id = json[Key.id] as? NSNumber ?? 0
             self.main = json[Key.main] as? String ?? ""
             self.description = json[Key.description] as? String ?? ""
             self.clouds = json[Key.clouds] as? String ?? ""
             self.icon = json[Key.icon] as? String ?? ""
+        }
     }
-}
 }

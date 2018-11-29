@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD1FC51621B0099600B874E0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1FC51521B0099600B874E0 /* MapViewController.swift */; };
+		AD1FC51921B00A3700B874E0 /* MapViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1FC51821B00A3700B874E0 /* MapViewControllerDelegate.swift */; };
 		ADF207F421AFEAD4009A8E54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF207F321AFEAD4009A8E54 /* AppDelegate.swift */; };
 		ADF207F921AFEAD5009A8E54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADF207F721AFEAD5009A8E54 /* Main.storyboard */; };
 		ADF207FB21AFEAD7009A8E54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADF207FA21AFEAD7009A8E54 /* Assets.xcassets */; };
@@ -30,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AD1FC51521B0099600B874E0 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		AD1FC51821B00A3700B874E0 /* MapViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerDelegate.swift; sourceTree = "<group>"; };
 		ADF207F021AFEAD4009A8E54 /* WeatherForecastApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherForecastApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADF207F321AFEAD4009A8E54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADF207F821AFEAD5009A8E54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -64,6 +68,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD1FC51321B0096300B874E0 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				AD1FC51421B0097600B874E0 /* ViewControllers */,
+				ADF207F721AFEAD5009A8E54 /* Main.storyboard */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		AD1FC51421B0097600B874E0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AD1FC51721B00A2100B874E0 /* Delegate */,
+				AD1FC51521B0099600B874E0 /* MapViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		AD1FC51721B00A2100B874E0 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				AD1FC51821B00A3700B874E0 /* MapViewControllerDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
 		ADF207E721AFEAD4009A8E54 = {
 			isa = PBXGroup;
 			children = (
@@ -85,12 +115,12 @@
 		ADF207F221AFEAD4009A8E54 /* WeatherForecastApp */ = {
 			isa = PBXGroup;
 			children = (
+				AD1FC51321B0096300B874E0 /* Map */,
 				ADF2081E21AFEFC6009A8E54 /* ModelObjects */,
 				ADF2081B21AFEDC8009A8E54 /* Enum */,
 				ADF2081821AFECEC009A8E54 /* Extensions */,
 				ADF2081321AFEB9C009A8E54 /* Network */,
 				ADF207F321AFEAD4009A8E54 /* AppDelegate.swift */,
-				ADF207F721AFEAD5009A8E54 /* Main.storyboard */,
 				ADF207FA21AFEAD7009A8E54 /* Assets.xcassets */,
 				ADF207FC21AFEAD7009A8E54 /* LaunchScreen.storyboard */,
 				ADF207FF21AFEAD7009A8E54 /* Info.plist */,
@@ -243,10 +273,12 @@
 			files = (
 				ADF2081721AFEC8B009A8E54 /* Resource.swift in Sources */,
 				ADF2081521AFEBF8009A8E54 /* WebService.swift in Sources */,
+				AD1FC51921B00A3700B874E0 /* MapViewControllerDelegate.swift in Sources */,
 				ADF207F421AFEAD4009A8E54 /* AppDelegate.swift in Sources */,
 				ADF2081D21AFEDE4009A8E54 /* APIResource.swift in Sources */,
 				ADF2082021AFF03E009A8E54 /* WeatherItem.swift in Sources */,
 				ADF2081A21AFECFF009A8E54 /* URLRequest.swift in Sources */,
+				AD1FC51621B0099600B874E0 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
