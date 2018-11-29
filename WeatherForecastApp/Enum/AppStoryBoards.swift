@@ -11,4 +11,5 @@ import Foundation
 enum AppStoryBoards: String {
     case AddBookMark
     case Main
+    case BookMarks
 }

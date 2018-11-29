@@ -31,19 +31,7 @@ class AddBookMarkViewController: UIViewController {
     @objc private func save() {
         guard let vm = viewModel else {return}
         vm.place.additionalInfo = descriptionOutlet.text
-        let userDefaults = UserDefaults.standard
-        if let decoded = userDefaults.object(forKey: "cities") as? Data,
-            var decodedList = NSKeyedUnarchiver.unarchiveObject(with: decoded) as? [Place] {
-            decodedList.append(vm.place)
-            userDefaults.removeObject(forKey: "cities")
-            let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: decodedList)
-            userDefaults.set(encodedData, forKey: "cities")
-            userDefaults.synchronize()
-        } else {
-            let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: vm.place)
-            userDefaults.set(encodedData, forKey: "cities")
-            userDefaults.synchronize()
-        }
+        vm.commit()
         navigationController?.popViewController(animated: true)
     }
 }

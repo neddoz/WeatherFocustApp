@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AD1FC51621B0099600B874E0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1FC51521B0099600B874E0 /* MapViewController.swift */; };
 		AD1FC51921B00A3700B874E0 /* MapViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1FC51821B00A3700B874E0 /* MapViewControllerDelegate.swift */; };
+		AD74E99E21B06F0700514F48 /* BoosMarksTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD74E99D21B06F0700514F48 /* BoosMarksTableViewDelegate.swift */; };
 		ADBAC22821B03F4F00DE9241 /* BookMarksTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBAC22721B03F4F00DE9241 /* BookMarksTableView.swift */; };
 		ADBAC22B21B03FB500DE9241 /* BookMarksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBAC22A21B03FB500DE9241 /* BookMarksViewModel.swift */; };
 		ADBAC22E21B0531300DE9241 /* AddBookMark.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADBAC22D21B0531300DE9241 /* AddBookMark.storyboard */; };
@@ -18,6 +19,8 @@
 		ADBAC23821B057A800DE9241 /* InfoDisplayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ADBAC23621B057A800DE9241 /* InfoDisplayCell.xib */; };
 		ADBAC23A21B05ADB00DE9241 /* StoryboardLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBAC23921B05ADB00DE9241 /* StoryboardLoadable.swift */; };
 		ADBAC23C21B05B0200DE9241 /* AppStoryBoards.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBAC23B21B05B0200DE9241 /* AppStoryBoards.swift */; };
+		ADBAC23E21B05E7800DE9241 /* BookMarks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADBAC23D21B05E7800DE9241 /* BookMarks.storyboard */; };
+		ADBAC24121B0601600DE9241 /* BookMarksDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBAC24021B0601600DE9241 /* BookMarksDataSource.swift */; };
 		ADCB564521B0138500110CAC /* CitySearchTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCB564421B0138500110CAC /* CitySearchTableView.swift */; };
 		ADCB564821B013B700110CAC /* CitySearchTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCB564721B013B700110CAC /* CitySearchTableViewDataSource.swift */; };
 		ADCB564B21B0140800110CAC /* MapSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCB564A21B0140800110CAC /* MapSearch.swift */; };
@@ -51,6 +54,7 @@
 /* Begin PBXFileReference section */
 		AD1FC51521B0099600B874E0 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		AD1FC51821B00A3700B874E0 /* MapViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerDelegate.swift; sourceTree = "<group>"; };
+		AD74E99D21B06F0700514F48 /* BoosMarksTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoosMarksTableViewDelegate.swift; sourceTree = "<group>"; };
 		ADBAC22721B03F4F00DE9241 /* BookMarksTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMarksTableView.swift; sourceTree = "<group>"; };
 		ADBAC22A21B03FB500DE9241 /* BookMarksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMarksViewModel.swift; sourceTree = "<group>"; };
 		ADBAC22D21B0531300DE9241 /* AddBookMark.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddBookMark.storyboard; sourceTree = "<group>"; };
@@ -60,6 +64,8 @@
 		ADBAC23621B057A800DE9241 /* InfoDisplayCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoDisplayCell.xib; sourceTree = "<group>"; };
 		ADBAC23921B05ADB00DE9241 /* StoryboardLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardLoadable.swift; sourceTree = "<group>"; };
 		ADBAC23B21B05B0200DE9241 /* AppStoryBoards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryBoards.swift; sourceTree = "<group>"; };
+		ADBAC23D21B05E7800DE9241 /* BookMarks.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BookMarks.storyboard; sourceTree = "<group>"; };
+		ADBAC24021B0601600DE9241 /* BookMarksDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMarksDataSource.swift; sourceTree = "<group>"; };
 		ADCB564421B0138500110CAC /* CitySearchTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySearchTableView.swift; sourceTree = "<group>"; };
 		ADCB564721B013B700110CAC /* CitySearchTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySearchTableViewDataSource.swift; sourceTree = "<group>"; };
 		ADCB564A21B0140800110CAC /* MapSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearch.swift; sourceTree = "<group>"; };
@@ -131,12 +137,23 @@
 			path = Delegate;
 			sourceTree = "<group>";
 		};
+		AD74E99C21B06EE400514F48 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				AD74E99D21B06F0700514F48 /* BoosMarksTableViewDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
 		ADBAC22621B03F1000DE9241 /* BookMarks */ = {
 			isa = PBXGroup;
 			children = (
+				AD74E99C21B06EE400514F48 /* Delegate */,
+				ADBAC23F21B05FEC00DE9241 /* DataSource */,
 				ADBAC22C21B052F300DE9241 /* Add */,
 				ADBAC22921B03F8100DE9241 /* ViewModel */,
 				ADBAC22721B03F4F00DE9241 /* BookMarksTableView.swift */,
+				ADBAC23D21B05E7800DE9241 /* BookMarks.storyboard */,
 			);
 			path = BookMarks;
 			sourceTree = "<group>";
@@ -174,6 +191,14 @@
 				ADBAC23621B057A800DE9241 /* InfoDisplayCell.xib */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		ADBAC23F21B05FEC00DE9241 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				ADBAC24021B0601600DE9241 /* BookMarksDataSource.swift */,
+			);
+			path = DataSource;
 			sourceTree = "<group>";
 		};
 		ADCB564621B013A100110CAC /* DataSource */ = {
@@ -362,6 +387,7 @@
 				ADF207FE21AFEAD7009A8E54 /* LaunchScreen.storyboard in Resources */,
 				ADBAC23821B057A800DE9241 /* InfoDisplayCell.xib in Resources */,
 				ADF207FB21AFEAD7009A8E54 /* Assets.xcassets in Resources */,
+				ADBAC23E21B05E7800DE9241 /* BookMarks.storyboard in Resources */,
 				ADF207F921AFEAD5009A8E54 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,10 +418,12 @@
 				ADF207F421AFEAD4009A8E54 /* AppDelegate.swift in Sources */,
 				ADCB565121B01C2100110CAC /* NibLoableView.swift in Sources */,
 				ADF2081D21AFEDE4009A8E54 /* APIResource.swift in Sources */,
+				AD74E99E21B06F0700514F48 /* BoosMarksTableViewDelegate.swift in Sources */,
 				ADBAC22821B03F4F00DE9241 /* BookMarksTableView.swift in Sources */,
 				ADCB564D21B0180A00110CAC /* MKPlaceMark.swift in Sources */,
 				ADF2082021AFF03E009A8E54 /* WeatherItem.swift in Sources */,
 				ADF2081A21AFECFF009A8E54 /* URLRequest.swift in Sources */,
+				ADBAC24121B0601600DE9241 /* BookMarksDataSource.swift in Sources */,
 				AD1FC51621B0099600B874E0 /* MapViewController.swift in Sources */,
 				ADCB565321B0252F00110CAC /* MKPointAnnotation.swift in Sources */,
 				ADBAC23021B053DE00DE9241 /* AddBookMarkViewController.swift in Sources */,

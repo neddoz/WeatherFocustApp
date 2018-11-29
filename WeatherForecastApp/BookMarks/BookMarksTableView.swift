@@ -8,9 +8,15 @@
 
 import UIKit
 
-class BookMarksTableView: UITableViewController {
+class BookMarksTableView: UIViewController{
 
+    var viewModel: BookMarksViewModel = .init()
+    @IBOutlet var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.dataSource = self
+        tableView.delegate = self
+        navigationItem.title = "Click to view Weather Forecast"
+        tableView.register(InfoDisplayCell.nib, forCellReuseIdentifier: InfoDisplayCell.nibName)
     }
 }

@@ -54,7 +54,7 @@ extension MapViewController: MapSearch {
             mapView.addAnnotation(annotation)
             let span = MKCoordinateSpanMake(0.05, 0.05)
             let region = MKCoordinateRegionMake(placemark.coordinate, span)
-            mapView.setRegion(region, animated: true)
+//            mapView.setRegion(region, animated: true)
             mapView.showAnnotations(mapView.annotations, animated: true)
         }
 }

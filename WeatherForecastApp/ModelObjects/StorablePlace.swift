@@ -41,6 +41,6 @@ class Place: NSObject, NSCoding  {
         aCoder.encode(lat, forKey: "lat")
         aCoder.encode(lon, forKey: "lon")
         aCoder.encode(title, forKey: "title")
-        aCoder.encode(title, forKey: "info")
+        aCoder.encode(additionalInfo, forKey: "info")
     }
 }

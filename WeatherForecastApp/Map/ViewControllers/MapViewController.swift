@@ -31,7 +31,8 @@ class MapViewController: UIViewController {
     }
 
     @objc private func showBookMarks() {
-    
+        let Vc = BookMarksTableView.instantiate(from: AppStoryBoards.BookMarks)
+        navigationController?.pushViewController(Vc, animated: true)
     }
 
     private func configureLocationManager() {
